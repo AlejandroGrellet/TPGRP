@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package palabrasclave.modelos;
+package tipos.modelos;
 
 /**
  *
  * @author mbmnu
  */
-public class palabraclave {
+public class Tipo {
     private String nombre;
 
     @Override
     public String toString() {
         return super.toString(); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
 }

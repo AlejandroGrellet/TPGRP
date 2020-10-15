@@ -9,7 +9,7 @@ package grupos.modelos;
  *
  * @author mbmnu
  */
-public class grupos {
+public class Grupo {
     private String nombre;
     private String descripcion;
     public void mostrar()
@@ -17,6 +17,13 @@ public class grupos {
         System.out.println(nombre);
         System.out.println(descripcion);
     }     
+
+    public Grupo(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+    
+    
 
     public String getNombre() {
         return nombre;

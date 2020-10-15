@@ -12,6 +12,12 @@ package idiomas.modelos;
 public class Idioma {
     private String nombre;
 
+    public Idioma(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
+
     @Override
     public String toString() {
         return super.toString(); //To change body of generated methods, choose Tools | Templates.

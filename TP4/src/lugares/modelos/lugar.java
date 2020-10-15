@@ -9,8 +9,14 @@ package lugares.modelos;
  *
  * @author mbmnu
  */
-public class lugar {
+public class Lugar {
     private String nombre;
+
+    public Lugar(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
 
     @Override
     public String toString() {

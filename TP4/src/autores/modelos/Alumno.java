@@ -1,29 +1,37 @@
-package autores.modelos;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+package autores.modelos;
 
 /**
  *
  * @author mbmnu
  */
-public class Profesores {
+public class Alumno {
     private int DNI;
     private String apellidos;
     private String nombres;
     private String clave;
-    private String cargo;
+    private String cx;
+
+    public Alumno(int DNI, String apellidos, String nombres, String clave, String cx) {
+        this.DNI = DNI;
+        this.apellidos = apellidos;
+        this.nombres = nombres;
+        this.clave = clave;
+        this.cx = cx;
+    }
+    
+    
     public void mostrar()
     {
         System.out.println(apellidos);
         System.out.println(nombres);
         System.out.println(DNI);
         System.out.println(clave);
-        System.out.println(cargo);
+        System.out.println(cx);
     }
 
     public int getDNI() {
@@ -58,11 +66,11 @@ public class Profesores {
         this.clave = clave;
     }
 
-    public String getCargo() {
-        return cargo;
+    public String getCx() {
+        return cx;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setCx(String cx) {
+        this.cx = cx;
     }
-    }
+}
