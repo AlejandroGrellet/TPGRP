@@ -11,6 +11,10 @@ package palabrasclaves.modelos;
  */
 public class PalabraClave {
     private String nombre;
+
+    public String getNombre() {
+        return nombre;
+    }
     
    
     

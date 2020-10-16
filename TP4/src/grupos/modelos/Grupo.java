@@ -5,6 +5,8 @@
  */
 package grupos.modelos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author mbmnu
@@ -12,6 +14,7 @@ package grupos.modelos;
 public class Grupo {
     private String nombre;
     private String descripcion;
+//    private ArrayList <MiembroEnGrupo> Miebro;
     public void mostrar()
     {
         System.out.println(nombre);
@@ -22,9 +25,11 @@ public class Grupo {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
-    
-    
 
+//    public void AgregarMiembro(MiembroEnGrupo m){
+//    this.Miebro.add(m);
+//    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -40,5 +45,7 @@ public class Grupo {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+   
     
 }
