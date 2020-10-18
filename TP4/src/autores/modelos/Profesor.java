@@ -16,77 +16,56 @@ import java.util.ArrayList;
  *
  * @author mbmnu
  */
-public class Profesor {
-    private int DNI;
-    private String apellidos;
-    private String nombres;
-    private String clave;
+public class Profesor extends Autor{
+    
     private final Cargo cargo;
     private ArrayList <MiembroEnGrupo> Miembro=new ArrayList();
     
     public void mostrar()
     {
-        System.out.println(apellidos);
-        System.out.println(nombres);
-        System.out.println(DNI);
-        System.out.println(clave);
+        super.mostrar();
         System.out.println(cargo);
         
     }
 
-    public Profesor(int DNI, String apellidos, String nombres, String clave, Cargo cargo) {
-        this.DNI = DNI;
-        this.apellidos = apellidos;
-        this.nombres = nombres;
-        this.clave = clave;
+   
+
+    public Profesor(int dni, String apellidos,String nombres, String clave,Cargo cargo ) {
+        super(dni, apellidos, nombres, clave);
         this.cargo = cargo;
+    }
+
         
     }
-    public void AsignarGrupo(MiembroEnGrupo e){
-        this.Miembro.add(e);
-        
-    }
+   
 
-    public int getDNI() {
-        return DNI;
-    }
-
-    public void setDNI(int DNI) {
-        this.DNI = DNI;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 5;
+//        hash = 79 * hash + this.DNI;
+//        return hash;
+//    }
 //
-//  public Cargo getCargo() {
-//        return cargo;
-//  }
-//
-//    public void setCargo(Cargo cargo) {
-//        this.cargo = cargo;
-//  }
-
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) {
+//            return true;
+//        }
+//        if (obj == null) {
+//            return false;
+//        }
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+//        final Profesor other = (Profesor) obj;
+//        if (this.DNI != other.DNI) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     
-}
+    
+
+    
+

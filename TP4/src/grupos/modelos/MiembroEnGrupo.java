@@ -5,6 +5,7 @@
  */
 package grupos.modelos;
 
+import autores.modelos.Autor;
 import autores.modelos.Profesor;
 import grupos.modelos.EnumRol.Rol;
 
@@ -13,12 +14,12 @@ import grupos.modelos.EnumRol.Rol;
  * @author mbmnu
  */
 public class MiembroEnGrupo {
-    private Profesor profesor;
+    private Autor autor;
     private Rol Rol;
     private Grupo grupo;
 
-    public MiembroEnGrupo(Profesor profesor,Rol Rol,Grupo grupo) {
-        this.profesor = profesor;
+    public MiembroEnGrupo(Autor autor,Rol Rol,Grupo grupo) {
+        this.autor = autor;
         this.Rol = Rol;
         this.grupo=grupo;
 
@@ -40,13 +41,7 @@ public class MiembroEnGrupo {
 //        this.grupo = grupo;
 //    }
 
-    public Profesor getProfesor() {
-        return profesor;
-    }
 
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
-    }
 
     public Grupo getGrupo() {
         return grupo;
@@ -67,7 +62,15 @@ public class MiembroEnGrupo {
 
     @Override
     public String toString() {
-        return  "profesor:" + profesor.getApellidos() + "," + profesor.getNombres() + "\nRol :" + Rol + "\nGrupo :" + grupo.getNombre() ;
+        return  "Autor:" + autor.getApellidos() + "," + autor.getNombres() +  "\n Grupo :" + grupo.getNombre() + "\nRol :" + Rol ;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
     

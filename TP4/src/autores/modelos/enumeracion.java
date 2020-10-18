@@ -10,6 +10,9 @@ package autores.modelos;
  * @author mbmnu
  */
 public class enumeracion {
+
+    
+    
     public enum Cargo{
         TITULAR,ASOCIADO,ADJUNTO,JTP,ADG;
     }

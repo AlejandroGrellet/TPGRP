@@ -9,68 +9,25 @@ package autores.modelos;
  *
  * @author mbmnu
  */
-public class Alumno {
-    private int DNI;
-    private String apellidos;
-    private String nombres;
-    private String clave;
+public class Alumno extends Autor{
+    
     private String cx;
 
-    public Alumno(int DNI, String apellidos, String nombres, String clave, String cx) {
-        this.DNI = DNI;
-        this.apellidos = apellidos;
-        this.nombres = nombres;
-        this.clave = clave;
+    public Alumno(int dni,  String apellidos,String nombres, String clave, String cx) {
+        super(dni, apellidos, nombres, clave);
         this.cx = cx;
     }
     
     
-    public void mostrar()
-    {
-        System.out.println(apellidos);
-        System.out.println(nombres);
-        System.out.println(DNI);
-        System.out.println(clave);
-        System.out.println(cx);
-    }
-
-    public int getDNI() {
-        return DNI;
-    }
-
-    public void setDNI(int DNI) {
-        this.DNI = DNI;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
-
-    public String getCx() {
-        return cx;
-    }
+    @Override
+   public void mostrar()
+   {
+       super.mostrar();
+       System.out.println(cx);
+   }
+    
 
     public void setCx(String cx) {
         this.cx = cx;
-    }
+    }   
 }

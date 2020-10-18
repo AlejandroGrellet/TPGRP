@@ -6,6 +6,7 @@
 package grupos.modelos;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -14,11 +15,16 @@ import java.util.ArrayList;
 public class Grupo {
     private String nombre;
     private String descripcion;
-//    private ArrayList <MiembroEnGrupo> Miebro;
+    private ArrayList <MiembroEnGrupo> Miembro = new ArrayList<>();
+    
+    
     public void mostrar()
     {
-        System.out.println(nombre);
-        System.out.println(descripcion);
+            System.out.println(nombre);
+            System.out.println(descripcion);
+        for(MiembroEnGrupo m:Miembro)
+            System.out.println( m.getGrupo()+ " " +m.getRol());
+            
     }     
 
     public Grupo(String nombre, String descripcion) {
@@ -46,6 +52,45 @@ public class Grupo {
         this.descripcion = descripcion;
     }
 
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 79 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Grupo other = (Grupo) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return true;
+    }
+
    
+    public void agregarMiembro(MiembroEnGrupo miembro){
+        this.Miembro.add(miembro);
+        miembro.setGrupo(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Grupo{" + "nombre=" + nombre + ", descripcion=" + descripcion + '}';
+    }
+    
+    
+    
+    
     
 }
