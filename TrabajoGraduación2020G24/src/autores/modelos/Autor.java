@@ -20,8 +20,8 @@ public abstract class Autor {
    private String apellidos;
    private String nombres;
    private String clave;
-//   private Grupo grupo;
-//   private Rol rol;
+   private Grupo grupo;
+   private Rol rol;
    private ArrayList <MiembroEnGrupo> listaGrupo = new ArrayList<>();
 
 
@@ -127,25 +127,14 @@ public abstract class Autor {
     }   
     }
     public void quitarGrupo(Grupo grupo){
-         for(MiembroEnGrupo mg : this.listaGrupo)
-        {
-                if(mg.verGrupo().equals(grupo))
-                {
-                    this.listaGrupo.remove(mg);
-                    mg.verGrupo().quitarMiembro(this);
-                }
-        }
-        }
-////        
-//        MiembroEnGrupo miembro2=new MiembroEnGrupo(this, rol, grupo);
-//            if(listaGrupo.contains(miembro2))
-//            {
-////                miembro2.verGrupo().quitarMiembro(miembro2.verAutor());
-//                listaGrupo.remove(miembro2);
-////                for(MiembroEnGrupo g: listaGrupo)
-////                {
-////                listaGrupo.remove(grupo);
-////                        }
+        MiembroEnGrupo miembro2=new MiembroEnGrupo(this, rol, grupo);
+         if(listaGrupo.contains(miembro2)){
+             listaGrupo.remove(miembro2);
+             miembro2.verGrupo().quitarMiembro(this);
+         }
+    }
+
+
     public boolean esSuperAdministrador()
         {
         for(MiembroEnGrupo mg : listaGrupo)

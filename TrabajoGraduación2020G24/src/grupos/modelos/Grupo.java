@@ -8,6 +8,7 @@ package grupos.modelos;
 import autores.modelos.Autor;
 import grupos.modelos.EnumRol.Rol;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 
 /**
@@ -18,8 +19,8 @@ public class Grupo {
     private String nombre;
     private String descripcion;
     private ArrayList<MiembroEnGrupo> listaAutores=new ArrayList<>() ;
-//    private Autor autor;
-//    private Rol rol;
+    private Autor autor;
+    private Rol rol;
    
     public void mostrar()
     {
@@ -85,33 +86,33 @@ public class Grupo {
     public void agregarMiembro(Autor autor, Rol rol){
         MiembroEnGrupo miembro1=new MiembroEnGrupo(autor, rol, this);
     if(!this.listaAutores.contains(miembro1)){
+        if("Super Administradores".equals(miembro1.verGrupo().verNombre())){
+                if(miembro1.verRol()==Rol.ADMINISTRADOR){
+                    this.listaAutores.add(miembro1);
+                    autor.agregarGrupo(this, rol);
+                }else{
+                    miembro1.asignarRol(Rol.ADMINISTRADOR);
+                    this.listaAutores.add(miembro1);
+                    autor.agregarGrupo(this, Rol.ADMINISTRADOR);
+//                System.out.println("EL MIEMBRO"+miembro1.verAutor()+ "NO ES ADMINISTRADOR");
+                }
+        }else{
         this.listaAutores.add(miembro1);
         autor.agregarGrupo(this, rol);
         
         }
     }
+    }
     public void quitarMiembro(Autor autor){
-        
-        for(MiembroEnGrupo m : this.listaAutores)
-        {
-                if(m.verAutor().equals(autor))
-                {
-                    this.listaAutores.remove(m);
-                    m.verAutor().quitarGrupo(this);   
-                }
+        MiembroEnGrupo mg=new MiembroEnGrupo(autor, rol, this);
+        if(listaAutores.contains(mg)){
+                listaAutores.remove(mg);
+                mg.verAutor().quitarGrupo(this);
         }
+        
+        
     }
         
-        
-//        MiembroEnGrupo miembro2=new MiembroEnGrupo(autor, rol, this);
-//            if(listaAutores.contains(miembro2))
-//            {
-////                miembro2.verAutor().quitarMiembro(miembro2.verAutor());
-//                listaAutores.remove(miembro2);
-                
-            
-        
-//    }
     public boolean tieneMiembros()
     {
         return !this.listaAutores.isEmpty();

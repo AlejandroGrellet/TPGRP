@@ -151,8 +151,8 @@ public class ControladorPrincipal {
         
         grupo1.mostrar(); 
 //        profesor1.quitarGrupo(grupo1);
-        System.out.println("_______G_MOD______");
-        grupo1.mostrar();        
+//        System.out.println("_______G_MOD______");
+//        grupo1.mostrar();
         System.out.println("_______________________");
         grupo3.agregarMiembro(alumno3, ADMINISTRADOR);
         grupo3.agregarMiembro(alumno4, COLABORADOR);
@@ -178,8 +178,11 @@ public class ControladorPrincipal {
 ////        quitarle 1 y mostrarlo, verificando que el autor 
 ////        ya no es miembro del grupo.
 ////        */
-////        grupo1.quitarMiembro(profesor1);
-////        grupo1.mostrar();
+        System.out.println("_______MARCADOR______");
+        grupo1.quitarMiembro(profesor1);
+        grupo1.mostrar();
+        profesor1.mostrar();
+        System.out.println("_______MARCADOR______");
 ////
 ////        /*
 ////        Crear un nuevo grupo para los super administradores. 
@@ -188,19 +191,22 @@ public class ControladorPrincipal {
 ////        con el rol de colaborador, verificando que se lo
 ////        agrega pero con el rol de administrador.
 ////        */
-////        Grupo grupo7 = new Grupo("Super Administradores", "Grupo para los super administradores"); //grupo para los super administradores
-////        if (!grupos.contains(grupo7))
-////            grupos.add(grupo7);
-////        grupo7.agregarMiembro(profesor1, Rol.COLABORADOR);
-////        grupo7.mostrar();
+        Grupo grupo7 = new Grupo("Super Administradores", "Grupo para los super administradores"); //grupo para los super administradores
+        if (!grupos.contains(grupo7))
+            grupos.add(grupo7);
+        grupo7.agregarMiembro(profesor1, Rol.COLABORADOR);
+        grupo7.agregarMiembro(alumno8, ADMINISTRADOR);
+        grupo7.mostrar();
 ////
 ////        /*
 ////        Verificar que el último grupo creado es de super administradores
 ////        y cualquiera de los otros grupos no 
 ////        (usar el método esSuperAdministradores() definido en la clase Grupo).
 ////        */
-////        System.out.println(grupo7.esSuperAdministradores());
-////        System.out.println(grupo1.esSuperAdministradores());
+        System.out.println(grupo7.esSuperAdministradores());
+        System.out.println(grupo1.esSuperAdministradores());
+        System.out.println(profesor1.esSuperAdministrador());
+        System.out.println(profesor2.esSuperAdministrador());
 ////        
 ////        /*Tomar el autor que se agregó al grupo de super administradores, 
 ////        verificar que el mismo es super administrador 
