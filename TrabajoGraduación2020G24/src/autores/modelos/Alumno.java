@@ -5,12 +5,14 @@
  */
 package autores.modelos;
 
+import java.util.Objects;
+
 /**
  *
  * @author mbmnu
  */
 public class Alumno extends Autor{
-    
+//    private int dni=super.getDni();
     private String cx;
 
     public Alumno(int dni,  String apellidos,String nombres, String clave, String cx) {
@@ -30,4 +32,29 @@ public class Alumno extends Autor{
     public void setCx(String cx) {
         this.cx = cx;
     }   
+    public String getCx() {
+        return cx;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode()+Objects.hashCode(this.cx);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!super.equals(obj)){
+            if(obj instanceof Alumno){
+                return Objects.equals(this.cx, ((Alumno)obj).getCx());
+            }else{
+                return false;
+            }
+        }
+        return true;
+    }
 }
+   
+
+    
+
+
