@@ -27,27 +27,27 @@ public class MiembroEnGrupo {
         this.grupo=grupo;
     }
     
-    public Grupo getGrupo() {
+    public Grupo verGrupo() {
         return grupo;
     }
 
-    public void setGrupo(Grupo grupo) {
+    public void asignarGrupo(Grupo grupo) {
         this.grupo = grupo;
     }
 
-    public Rol getRol() {
+    public Rol verRol() {
         return Rol;
     }
 
-    public void setRol(Rol Rol) {
+    public void asignarRol(Rol Rol) {
         this.Rol = Rol;
     }
     
-     public Autor getAutor() {
+     public Autor verAutor() {
         return autor;
     }
 
-    public void setAutor(Autor autor) {
+    public void asignarAutor(Autor autor) {
         this.autor = autor;
     }
     
@@ -78,7 +78,7 @@ public class MiembroEnGrupo {
     
     @Override
     public String toString() {
-        return  "Autor:" + autor.verApellidos() + "," + autor.verNombres() +  "\n Grupo :" + grupo.getNombre() + "\nRol :" + Rol ;
+        return  "Autor:" + this.autor.verApellidos() + "," + this.autor.verNombres() +  "\n Grupo :" + this.grupo.verNombre() + "\nRol :" + this.Rol ;
     }
 
 //    public void agregarM(Autor autor, Rol rol) {

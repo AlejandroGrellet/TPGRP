@@ -18,8 +18,8 @@ public class Grupo {
     private String nombre;
     private String descripcion;
     private ArrayList<MiembroEnGrupo> listaAutores=new ArrayList<>() ;
-    private Autor autor;
-    private Rol rol;
+//    private Autor autor;
+//    private Rol rol;
    
     public void mostrar()
     {
@@ -36,19 +36,19 @@ public class Grupo {
         this.descripcion = descripcion;
     }
     
-    public String getNombre() {
+    public String verNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void asignarNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getDescripcion() {
+    public String verDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    public void asignarDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
     
@@ -81,25 +81,53 @@ public class Grupo {
         }
         return true;
     }
-    
+//    
     public void agregarMiembro(Autor autor, Rol rol){
         MiembroEnGrupo miembro1=new MiembroEnGrupo(autor, rol, this);
-    if(!listaAutores.contains(miembro1)){
-        listaAutores.add(miembro1);
+    if(!this.listaAutores.contains(miembro1)){
+        this.listaAutores.add(miembro1);
         autor.agregarGrupo(this, rol);
         
         }
     }
     public void quitarMiembro(Autor autor){
         
-        MiembroEnGrupo miembro2=new MiembroEnGrupo(autor, rol, this);
-            if(listaAutores.contains(miembro2))
-            {
-//                miembro2.getAutor().quitarMiembro(miembro2.getAutor());
-                listaAutores.remove(miembro2);
-                
-            }
+        for(MiembroEnGrupo m : this.listaAutores)
+        {
+                if(m.verAutor().equals(autor))
+                {
+                    this.listaAutores.remove(m);
+                    m.verAutor().quitarGrupo(this);   
+                }
+        }
+    }
         
+        
+//        MiembroEnGrupo miembro2=new MiembroEnGrupo(autor, rol, this);
+//            if(listaAutores.contains(miembro2))
+//            {
+////                miembro2.verAutor().quitarMiembro(miembro2.verAutor());
+//                listaAutores.remove(miembro2);
+                
+            
+        
+//    }
+    public boolean tieneMiembros()
+    {
+        return !this.listaAutores.isEmpty();
+    }
+    
+    
+    
+    public boolean esSuperAdministradores(){
+        for(MiembroEnGrupo mg : this.listaAutores)
+        {
+            if(mg.verRol()==Rol.COLABORADOR)
+                return false;
+        }
+        
+        return true;        
+              
     }
     
     

@@ -149,8 +149,8 @@ public class ControladorPrincipal {
         grupo1.agregarMiembro(profesor1, Rol.COLABORADOR); //autor repetido
         grupo1.agregarMiembro(alumno1, Rol.COLABORADOR);
         
-        grupo1.mostrar();
-        grupo1.quitarMiembro(profesor1);
+        grupo1.mostrar(); 
+//        profesor1.quitarGrupo(grupo1);
         System.out.println("_______G_MOD______");
         grupo1.mostrar();        
         System.out.println("_______________________");
@@ -161,54 +161,54 @@ public class ControladorPrincipal {
         grupo3.mostrar();
         System.out.println("_______________________");
         
-//        /*Tomar 1 de los 2 autores que se asignó al grupo anterior y 
-//        agregarlo a otro grupo distinto. 
-//        Mostrar los 2 autores verificando que pertenezcan a los grupos
-//        a los que fueron asignados. 
-//        Verificar también que no se pueda agregarle a un autor 
-//        un mismo grupo más de una vez, por más que sean roles distintos.*/
+////        /*Tomar 1 de los 2 autores que se asignó al grupo anterior y 
+////        agregarlo a otro grupo distinto. 
+////        Mostrar los 2 autores verificando que pertenezcan a los grupos
+////        a los que fueron asignados. 
+////        Verificar también que no se pueda agregarle a un autor 
+////        un mismo grupo más de una vez, por más que sean roles distintos.*/
         System.out.println("------M V PROFESORES--------");
         profesor1.agregarGrupo(grupo2, Rol.COLABORADOR);
         profesor1.agregarGrupo(grupo2, Rol.ADMINISTRADOR); //grupo repetido
         profesor1.mostrar();
         profesor2.mostrar();
-//        
-//        /*
-//        Tomar el grupo al que se le agregaron los 2 autores como miembros, 
-//        quitarle 1 y mostrarlo, verificando que el autor 
-//        ya no es miembro del grupo.
-//        */
-//        grupo1.quitarMiembro(profesor1);
-//        grupo1.mostrar();
+////        
+////        /*
+////        Tomar el grupo al que se le agregaron los 2 autores como miembros, 
+////        quitarle 1 y mostrarlo, verificando que el autor 
+////        ya no es miembro del grupo.
+////        */
+////        grupo1.quitarMiembro(profesor1);
+////        grupo1.mostrar();
+////
+////        /*
+////        Crear un nuevo grupo para los super administradores. 
+////        Este grupo DEBE llevar por nombre "Super Administradores". 
+////        Intentar asignarle como miembro un autor cualquiera
+////        con el rol de colaborador, verificando que se lo
+////        agrega pero con el rol de administrador.
+////        */
+////        Grupo grupo7 = new Grupo("Super Administradores", "Grupo para los super administradores"); //grupo para los super administradores
+////        if (!grupos.contains(grupo7))
+////            grupos.add(grupo7);
+////        grupo7.agregarMiembro(profesor1, Rol.COLABORADOR);
+////        grupo7.mostrar();
+////
+////        /*
+////        Verificar que el último grupo creado es de super administradores
+////        y cualquiera de los otros grupos no 
+////        (usar el método esSuperAdministradores() definido en la clase Grupo).
+////        */
+////        System.out.println(grupo7.esSuperAdministradores());
+////        System.out.println(grupo1.esSuperAdministradores());
+////        
+////        /*Tomar el autor que se agregó al grupo de super administradores, 
+////        verificar que el mismo es super administrador 
+////        y los otros autores no (usar el método esSuperAdministrador() 
+////        definido en la clase Autor).*/
+////        System.out.println(profesor1.esSuperAdministrador());
+////        System.out.println(alumno1.esSuperAdministrador());
 //
-//        /*
-//        Crear un nuevo grupo para los super administradores. 
-//        Este grupo DEBE llevar por nombre "Super Administradores". 
-//        Intentar asignarle como miembro un autor cualquiera
-//        con el rol de colaborador, verificando que se lo
-//        agrega pero con el rol de administrador.
-//        */
-//        Grupo grupo7 = new Grupo("Super Administradores", "Grupo para los super administradores"); //grupo para los super administradores
-//        if (!grupos.contains(grupo7))
-//            grupos.add(grupo7);
-//        grupo7.agregarMiembro(profesor1, Rol.COLABORADOR);
-//        grupo7.mostrar();
-//
-//        /*
-//        Verificar que el último grupo creado es de super administradores
-//        y cualquiera de los otros grupos no 
-//        (usar el método esSuperAdministradores() definido en la clase Grupo).
-//        */
-//        System.out.println(grupo7.esSuperAdministradores());
-//        System.out.println(grupo1.esSuperAdministradores());
-//        
-//        /*Tomar el autor que se agregó al grupo de super administradores, 
-//        verificar que el mismo es super administrador 
-//        y los otros autores no (usar el método esSuperAdministrador() 
-//        definido en la clase Autor).*/
-//        System.out.println(profesor1.esSuperAdministrador());
-//        System.out.println(alumno1.esSuperAdministrador());
-
         /*Main parte 3*/
         System.out.println("------------------TIPOS------------------");
         Tipo tipo1 = new Tipo("Tipo 1");

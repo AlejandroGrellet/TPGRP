@@ -20,15 +20,15 @@ public class PalabraClave {
     
     
 
-    public String getNombre() {
+    public String verNombre() {
         return nombre;
     }
 
-//    public void setNombre(String nombre) {
+//    public void asignarNombre(String nombre) {
 //        this.nombre = nombre;
 //    }
 
-    public void setNombre(String nombre) {
+    public void asignarNombre(String nombre) {
         this.nombre = nombre;
     }
     

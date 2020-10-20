@@ -20,9 +20,9 @@ public abstract class Autor {
    private String apellidos;
    private String nombres;
    private String clave;
-   private Grupo grupo;
-   private Rol rol;
-   private ArrayList <MiembroEnGrupo> listaGrupo=new ArrayList();
+//   private Grupo grupo;
+//   private Rol rol;
+   private ArrayList <MiembroEnGrupo> listaGrupo = new ArrayList<>();
 
 
     public Autor(int dni, String apellidos, String nombres, String clave) {
@@ -30,6 +30,10 @@ public abstract class Autor {
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.clave = clave;
+    }
+
+    public ArrayList<MiembroEnGrupo> getListaGrupo() {
+        return listaGrupo;
     }
    
  
@@ -114,23 +118,49 @@ public abstract class Autor {
           MiembroEnGrupo miembro1=new MiembroEnGrupo(this, rol, grupo);
           int c=0;
         for(MiembroEnGrupo lg:listaGrupo){
-          if(lg.getGrupo().equals(miembro1.getGrupo()))
+          if(lg.verGrupo().equals(miembro1.verGrupo()))
             c++;
         }
         if(c==0){
         this.listaGrupo.add(miembro1);
-        miembro1.getGrupo().agregarMiembro(this, rol);
+        miembro1.verGrupo().agregarMiembro(this, rol);
     }   
     }
-    public void quitarMiembro(Autor autor){
-        
-        MiembroEnGrupo miembro2=new MiembroEnGrupo(this, rol, grupo);
-            if(listaGrupo.contains(miembro2))
-            {
-//                miembro2.getGrupo().quitarMiembro(miembro2.getAutor());
-                listaGrupo.remove(miembro2);
-                
-            }
-        
-    }
+    public void quitarGrupo(Grupo grupo){
+         for(MiembroEnGrupo mg : this.listaGrupo)
+        {
+                if(mg.verGrupo().equals(grupo))
+                {
+                    this.listaGrupo.remove(mg);
+                    mg.verGrupo().quitarMiembro(this);
+                }
+        }
+        }
+////        
+//        MiembroEnGrupo miembro2=new MiembroEnGrupo(this, rol, grupo);
+//            if(listaGrupo.contains(miembro2))
+//            {
+////                miembro2.verGrupo().quitarMiembro(miembro2.verAutor());
+//                listaGrupo.remove(miembro2);
+////                for(MiembroEnGrupo g: listaGrupo)
+////                {
+////                listaGrupo.remove(grupo);
+////                        }
+    public boolean esSuperAdministrador()
+        {
+        for(MiembroEnGrupo mg : listaGrupo)
+        {
+            if(mg.verGrupo().esSuperAdministradores())
+                return true;
+        }
+        return false;
+        }
 }
+
+
+    
+ 
+//            
+//        
+    
+

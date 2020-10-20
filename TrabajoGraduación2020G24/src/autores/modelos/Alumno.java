@@ -29,10 +29,10 @@ public class Alumno extends Autor{
    }
     
 
-    public void setCx(String cx) {
+    public void asignarCx(String cx) {
         this.cx = cx;
     }   
-    public String getCx() {
+    public String verCx() {
         return cx;
     }
 
@@ -45,7 +45,7 @@ public class Alumno extends Autor{
     public boolean equals(Object obj) {
         if(!super.equals(obj)){
             if(obj instanceof Alumno){
-                return Objects.equals(this.cx, ((Alumno)obj).getCx());
+                return Objects.equals(this.cx, ((Alumno)obj).verCx());
             }else{
                 return false;
             }
