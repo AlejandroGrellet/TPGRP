@@ -6,7 +6,7 @@
 package grupos.modelos;
 
 import autores.modelos.Autor;
-import grupos.modelos.EnumRol.Rol;
+import grupos.modelos.EnumRol;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -18,10 +18,10 @@ public class MiembroEnGrupo {
 //    private ArrayList<Autor> autorList=new ArrayList<>();
     private Autor autor;
 //    private ArrayList<Rol> rolList=new ArrayList<>();
-    private Rol Rol;
+    private EnumRol Rol;
     private Grupo grupo;
 
-    public MiembroEnGrupo(Autor autor,Rol Rol,Grupo grupo) {
+    public MiembroEnGrupo(Autor autor,EnumRol Rol,Grupo grupo) {
         this.autor = autor;
         this.Rol = Rol;
         this.grupo=grupo;
@@ -35,11 +35,11 @@ public class MiembroEnGrupo {
         this.grupo = grupo;
     }
 
-    public Rol verRol() {
+    public EnumRol verRol() {
         return Rol;
     }
 
-    public void asignarRol(Rol Rol) {
+    public void asignarRol(EnumRol Rol) {
         this.Rol = Rol;
     }
     

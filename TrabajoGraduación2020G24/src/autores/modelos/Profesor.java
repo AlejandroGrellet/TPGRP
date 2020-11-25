@@ -1,6 +1,6 @@
 package autores.modelos;
 
-import autores.modelos.enumeracion.Cargo;
+import autores.modelos.Cargo;
 import grupos.modelos.EnumRol;
 import grupos.modelos.MiembroEnGrupo;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.Objects;
  */
 public class Profesor extends Autor{
     
-    private final Cargo cargo;
+    private Cargo cargo;
     private ArrayList <MiembroEnGrupo> Miembro=new ArrayList();
     
     public void mostrar()
@@ -29,7 +29,9 @@ public class Profesor extends Autor{
         
     }
 
-   
+   public void asignarCargo(Cargo cargo) {
+        this.cargo = cargo;
+    }
 
     public Profesor(int dni, String apellidos,String nombres, String clave,Cargo cargo ) {
         super(dni, apellidos, nombres, clave);

@@ -6,7 +6,7 @@
 package grupos.modelos;
 
 import autores.modelos.Autor;
-import grupos.modelos.EnumRol.Rol;
+import grupos.modelos.EnumRol;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
@@ -19,12 +19,11 @@ public class Grupo {
     private String nombre;
     private String descripcion;
     private ArrayList<MiembroEnGrupo> listaAutores=new ArrayList<>() ;
-    private Autor autor;
-    private Rol rol;
+    
    
     public void mostrar()
     {
-//            System.out.println(nombre);
+            System.out.println(nombre);
 //            System.out.println(descripcion);
             for (MiembroEnGrupo m:listaAutores)
                 System.out.println(m);
@@ -83,17 +82,17 @@ public class Grupo {
         return true;
     }
 //    
-    public void agregarMiembro(Autor autor, Rol rol){
+    public void agregarMiembro(Autor autor, EnumRol rol){
         MiembroEnGrupo miembro1=new MiembroEnGrupo(autor, rol, this);
     if(!this.listaAutores.contains(miembro1)){
         if("Super Administradores".equals(miembro1.verGrupo().verNombre())){
-                if(miembro1.verRol()==Rol.ADMINISTRADOR){
+                if(miembro1.verRol()==EnumRol.ADMINISTRADOR){
                     this.listaAutores.add(miembro1);
                     autor.agregarGrupo(this, rol);
                 }else{
-                    miembro1.asignarRol(Rol.ADMINISTRADOR);
+                    miembro1.asignarRol(EnumRol.ADMINISTRADOR);
                     this.listaAutores.add(miembro1);
-                    autor.agregarGrupo(this, Rol.ADMINISTRADOR);
+                    autor.agregarGrupo(this, EnumRol.ADMINISTRADOR);
 //                System.out.println("EL MIEMBRO"+miembro1.verAutor()+ "NO ES ADMINISTRADOR");
                 }
         }else{
@@ -104,7 +103,7 @@ public class Grupo {
     }
     }
     public void quitarMiembro(Autor autor){
-        MiembroEnGrupo mg=new MiembroEnGrupo(autor, rol, this);
+        MiembroEnGrupo mg=new MiembroEnGrupo(autor,autor.verRol(), this);
         if(listaAutores.contains(mg)){
                 listaAutores.remove(mg);
                 mg.verAutor().quitarGrupo(this);
@@ -123,7 +122,7 @@ public class Grupo {
     public boolean esSuperAdministradores(){
         for(MiembroEnGrupo mg : this.listaAutores)
         {
-            if(mg.verRol()==Rol.COLABORADOR)
+            if(mg.verRol()==EnumRol.COLABORADOR)
                 return false;
         }
         

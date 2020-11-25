@@ -6,7 +6,7 @@
 package autores.vistas;
 
 
-import autores.modelos.enumeracion.Cargo;
+import autores.modelos.Cargo;
 import javax.swing.DefaultComboBoxModel;
 
 /**

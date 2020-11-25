@@ -5,7 +5,7 @@
  */
 package autores.modelos;
 
-import grupos.modelos.EnumRol.Rol;
+import grupos.modelos.EnumRol;
 import grupos.modelos.Grupo;
 import grupos.modelos.MiembroEnGrupo;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public abstract class Autor {
    private String nombres;
    private String clave;
    private Grupo grupo;
-   private Rol rol;
+   private EnumRol rol;
    private ArrayList <MiembroEnGrupo> listaGrupo = new ArrayList<>();
 
 
@@ -69,6 +69,11 @@ public abstract class Autor {
     public void asignarClave(String clave) {
         this.clave = clave;
     }
+
+    public EnumRol verRol() {
+        return rol;
+    }
+    
     public ArrayList <MiembroEnGrupo> verListaGrupo() {
         return listaGrupo;
     }
@@ -114,7 +119,7 @@ public abstract class Autor {
         return "Autor{" + "dni=" + dni + ", apellidos=" + apellidos + ", nombres=" + nombres + ", clave=" + clave + '}';
     }
     
-    public void agregarGrupo(Grupo grupo,Rol rol){
+    public void agregarGrupo(Grupo grupo,EnumRol rol){
           MiembroEnGrupo miembro1=new MiembroEnGrupo(this, rol, grupo);
           int c=0;
         for(MiembroEnGrupo lg:listaGrupo){

@@ -9,9 +9,11 @@ import autores.modelos.Alumno;
 import java.awt.Dialog;
 import java.util.ArrayList;
 import javax.swing.JDialog;
+import autores.controladores.ControladorAMAlumno;
 
 public class VentanaAMAlumno extends JDialog {    
     ArrayList<Alumno> alumnos = new ArrayList<>();
+    private ControladorAMAlumno gestorAl;
     
     /**
      * Constructor

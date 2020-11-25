@@ -6,7 +6,7 @@
 package autores.vistas;
 
 import autores.modelos.Profesor;
-import autores.modelos.enumeracion;
+import autores.modelos.Cargo;
 import java.awt.Dialog;
 import java.util.ArrayList;
 import javax.swing.JDialog;
@@ -144,7 +144,7 @@ public class VentanaAMProfesor extends JDialog {
             dni = Integer.parseInt(this.txtDNI.getText().trim());
         String apellidos = this.txtApellidos.getText().trim();
         String nombres = this.txtNombres.getText().trim();
-        enumeracion.Cargo cargo = ((ModeloComboCargos)this.ComboCargo.getModel()).obtenerCargo();
+        Cargo cargo = ((ModeloComboCargos)this.ComboCargo.getModel()).obtenerCargo();
         String clave = new String(this.passClave.getPassword());
         Profesor profesor = new Profesor(dni, apellidos, nombres, clave, cargo);
         this.profesores.add(profesor);

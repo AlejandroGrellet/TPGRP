@@ -99,6 +99,26 @@ public class Publicacion {
         }
         return true;
     }
+
+    public MiembroEnGrupo getMgrupo() {
+        return Mgrupo;
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public Idioma getIdioma() {
+        return idioma;
+    }
+
+    public ArrayList <PalabraClave> getPalabraClave() {
+        return PalabraClave;
+    }
+
+    public Lugar getLugar() {
+        return lugar;
+    }
     
     
     

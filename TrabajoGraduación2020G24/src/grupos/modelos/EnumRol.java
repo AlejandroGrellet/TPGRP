@@ -9,8 +9,8 @@ package grupos.modelos;
  *
  * @author mbmnu
  */
-public class EnumRol {
-    public enum Rol{
+public enum EnumRol {
+    
         ADMINISTRADOR,COLABORADOR;
-    }
+    
 }
