@@ -3,12 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mbmnu/Documents/NetBeansProjects/TrabajoGraduación2020G24/src/principal/controladores/ControladorPrincipal.java</file>
-            <file>file:/C:/Users/mbmnu/Documents/NetBeansProjects/TrabajoGraduación2020G24/src/autores/modelos/GestorAutores.java</file>
-            <file>file:/C:/Users/mbmnu/Documents/NetBeansProjects/TrabajoGraduación2020G24/src/grupos/modelos/GestorGrupos.java</file>
-            <file>file:/C:/Users/mbmnu/Documents/NetBeansProjects/TrabajoGraduación2020G24/src/Publicaciones/modelos/Publicacion.java</file>
-            <file>file:/C:/Users/mbmnu/Documents/NetBeansProjects/TrabajoGraduación2020G24/src/Publicaciones/modelos/GestorPublicaciones.java</file>
-            <file>file:/C:/Users/mbmnu/Documents/NetBeansProjects/TrabajoGraduación2020G24/src/grupos/modelos/MiembroEnGrupo.java</file>
+            <file>file:/C:/Users/mbmnu/Documents/NetBeansProjects/TrabajoGraduación2020G24/src/lugares/modelos/lugar.java</file>
         </group>
     </open-files>
 </project-private>
