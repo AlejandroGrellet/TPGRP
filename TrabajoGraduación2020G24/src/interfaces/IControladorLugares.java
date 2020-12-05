@@ -14,8 +14,8 @@ import java.awt.event.WindowEvent;
  * @author mbmnu
  */
 public interface IControladorLugares {
-    public static final String TITULO = "Palabras Claves";
-    public static final String CONFIRMACION = "¿Desea borrar la palabra clav especificada?";
+    public static final String TITULO = "Lugaes";
+    public static final String CONFIRMACION = "¿Desea borrar el lugar especificada?";
 /**
 * Acción a ejecutar cuando se selecciona el botón Nueva
 * @param evt evento

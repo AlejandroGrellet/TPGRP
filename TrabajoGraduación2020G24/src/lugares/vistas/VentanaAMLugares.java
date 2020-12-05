@@ -5,9 +5,9 @@
  */
 package lugares.vistas;
 
-import interfaces.IControladorLugar;
 import javax.swing.JTextField;
-import lugares.controladores.ControladorLugar;
+import lugares.controladores.ControladorALugar;
+import interfaces.IControladorALugar;
 
 /**
  *
@@ -16,10 +16,10 @@ import lugares.controladores.ControladorLugar;
 public class VentanaAMLugares extends javax.swing.JDialog {
 
     private  VentanaAMLugares ventana;
-    private IControladorLugar controlador;
+    private IControladorALugar controlador;
     
    
-   public VentanaAMLugares(IControladorLugar cont,java.awt.Frame parent, boolean modal) {
+   public VentanaAMLugares(IControladorALugar cont,java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.controlador=cont;

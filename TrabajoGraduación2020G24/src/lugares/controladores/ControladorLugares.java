@@ -5,7 +5,6 @@
  */
 package lugares.controladores;
 
-import interfaces.IControladorLugar;
 import interfaces.IControladorLugares;
 import interfaces.IGestorLugares;
 import java.awt.event.ActionEvent;
@@ -18,6 +17,7 @@ import lugares.modelos.Lugar;
 import lugares.vistas.ModeloTablaLugares;
 import lugares.vistas.VentanaLugares;
 import principal.vistas.VentanaPrincipal;
+import interfaces.IControladorALugar;
 
 /**
  *
@@ -40,7 +40,7 @@ public class ControladorLugares implements IControladorLugares{
 
     @Override
     public void btnNuevaClic(ActionEvent evt) {
-        IControladorLugar contLug = new ControladorLugar();
+        IControladorALugar contLug = new ControladorALugar();
         ModeloTablaLugares mtl = (ModeloTablaLugares)this.ventana.getTablaLugares().getModel();
         mtl.actualizar();
     }

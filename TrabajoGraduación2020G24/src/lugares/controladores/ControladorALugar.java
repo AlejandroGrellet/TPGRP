@@ -5,25 +5,25 @@
  */
 package lugares.controladores;
 
-import interfaces.IControladorLugar;
 import interfaces.IGestorLugares;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import lugares.modelos.GestorLugares;
 import lugares.vistas.VentanaAMLugares;
+import interfaces.IControladorALugar;
 
 /**
  *
  * @author mbmnu
  */
-public class ControladorLugar implements IControladorLugar{
+public class ControladorALugar implements IControladorALugar{
     private VentanaAMLugares ventana;
     IGestorLugares GL =GestorLugares.crear();
     private final String ERROR="Error al cargar los elementos, por favo verifique los datos";
     private final String MSJ_REPETIDO="Elemento repetido";
 
-    public ControladorLugar() {
+    public ControladorALugar() {
         this.ventana = new VentanaAMLugares(this, null, true);
         ventana.setTitle(TITULO);
         ventana.setLocationRelativeTo(null);

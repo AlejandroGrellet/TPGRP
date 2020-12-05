@@ -12,8 +12,8 @@ import java.awt.event.KeyEvent;
  *
  * @author mbmnu
  */
-public interface IControladorLugar {
-    public static final String TITULO = "Nueva palabra clave";
+public interface IControladorALugar {
+    public static final String TITULO = "Nuevo Lugar";
 /**
 * Acción a ejecutar cuando se selecciona el botón Guardar
 * @param evt evento
